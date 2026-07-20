@@ -2,6 +2,8 @@
 
 StrataDMS is a modern, enterprise-grade Document Management System designed for speed, security, and simplicity. The Community Edition provides all the core features you need to organize and access your files instantly, wrapped in a beautiful, premium user interface.
 
+This is the first major release. There are definately bugs and things to improve. Please feel free to suggest improvements or fix bugs. AI Coding is awesome :-) !!!
+
 ## Features
 - **Secure File Storage**: Robust document management with file locking and metadata tracking.
 - **Granular Permissions**: Role-based access control (Admin/User) and directory-level permission assignments.
