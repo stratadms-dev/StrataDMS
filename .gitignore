@@ -1,0 +1,13 @@
+# Database config file containing passwords
+src/db.php
+
+# Storage directory containing user uploaded documents
+storage/
+
+# Temporary and IDE files
+.vscode/
+.DS_Store
+*.zip
+
+# Exclude marketing materials
+public/marketing/
