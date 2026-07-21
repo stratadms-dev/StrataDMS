@@ -11,6 +11,15 @@ This is the first major release. There are definately bugs and things to improve
 - **Recently Viewed**: Quick access to your most frequently used documents.
 - **Customizable**: Adjustable settings for brand logos, password complexity, and more.
 
+## Screenshots
+<p align="center">
+  <img src="screenshots/Screen1.png" width="45%" alt="Dashboard Screenshot 1">
+  <img src="screenshots/Screen2.png" width="45%" alt="Dashboard Screenshot 2">
+  <img src="screenshots/Screen3.png" width="45%" alt="Dashboard Screenshot 3">
+  <img src="screenshots/Screen4.png" width="45%" alt="Dashboard Screenshot 4">
+  <img src="screenshots/Screen5.png" width="45%" alt="Dashboard Screenshot 5">
+</p>
+
 ## License
 StrataDMS is open-source software released under the **GNU Affero General Public License Version 3 (AGPLv3)**. Please see the `LICENSE` file for full terms and conditions.
 
