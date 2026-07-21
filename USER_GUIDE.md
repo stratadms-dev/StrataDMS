@@ -35,6 +35,12 @@ StrataDMS operates on a hierarchical folder system, similar to Windows Explorer 
 2. Click **Upload File** in the top toolbar, or simply **drag and drop** a PDF file from your computer directly into the browser window.
 3. The system will automatically generate a high-quality thumbnail for previewing.
 
+### Bulk Actions
+If you need to move or delete many files at once:
+1. In the main dashboard grid, select multiple PDFs by checking the boxes in their top-left corners.
+2. A new "Bulk Actions" menu will appear at the top of the screen.
+3. Select either **Move Selected** or **Delete Selected** to batch process your files.
+
 ### The Recycle Bin
 When you delete a file or folder, it is not permanently destroyed immediately.
 1. Click **Recycle Bin** in the left sidebar to view deleted items.
@@ -52,10 +58,9 @@ StrataDMS includes a powerful built-in PDF Workspace for manipulating documents 
 - **Delete Pages:** Hover over a page thumbnail and click the red trash icon to instantly remove it from the document.
 
 ### Merging Documents
-1. In the main dashboard grid, select multiple PDFs by checking the boxes in their top-left corners.
-2. A new "Bulk Actions" menu will appear at the top of the screen.
-3. Select **Merge Selected PDFs**.
-4. Provide a name for the new document. The system will combine them in the order they were selected.
+1. In the main dashboard grid, simply **click and drag** one PDF document and drop it directly on top of another PDF document.
+2. A prompt will appear asking you to confirm the merge.
+3. Provide a name for the new document. The dropped document will be appended to the target document.
 
 ### Watermarking
 1. Open a document in the Workspace and click the **Watermark** tab on the right.
