@@ -4,6 +4,7 @@ StrataDMS is a modern, enterprise-grade Document Management System designed for 
 
 This is the first major release. There are definately bugs and things to improve. Please feel free to suggest improvements or fix bugs. AI Coding is awesome :-) !!!
 
+📚 **[Click here to read the official User Guide](USER_GUIDE.md)** for instructions on how to use the platform.
 ## Features
 - **Secure File Storage**: Robust document management with file locking and metadata tracking.
 - **Granular Permissions**: Role-based access control (Admin/User) and directory-level permission assignments.
