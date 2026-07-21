@@ -56,7 +56,7 @@ if ($mimeType !== 'application/pdf') {
 }
 
 // Secure Filenames
-$originalName = basename($file['name']);
+$originalName = pathinfo($file['name'], PATHINFO_FILENAME);
 $fileSize = $file['size'];
 
 $secureBaseName = bin2hex(random_bytes(16));
