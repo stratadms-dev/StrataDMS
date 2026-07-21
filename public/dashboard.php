@@ -1396,9 +1396,9 @@ foreach ($allFields as $f) {
             
             if (isRecycleBin) {
                 const deleteBtn = window.currentUserRole === 'admin'
-                    ? `<button onclick="executeBulkPermanentDelete()" class="flex items-center gap-2 px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-medium transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>Delete Permanently</button>`
+                    ? `<button onclick="executeBulkPermanentDelete()" class="flex items-center gap-2 px-3 py-1.5 bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 text-white rounded text-sm font-medium transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>Delete Permanently</button>`
                     : '';
-                btnContainer.innerHTML = `<button onclick="executeBulkAction('restore')" class="flex items-center gap-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm font-medium transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>Restore</button>${deleteBtn}`;
+                btnContainer.innerHTML = `<button onclick="executeBulkAction('restore')" class="flex items-center gap-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded text-sm font-medium transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>Restore</button>${deleteBtn}`;
             } else {
                 btnContainer.innerHTML = `
                     <button onclick="promptBulkMove()" class="flex items-center gap-2 px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-white rounded text-sm font-medium transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>Move</button>
@@ -2282,24 +2282,24 @@ function buildRecycleBinRow(item, depth = 0) {
         : `<span class="w-5 inline-block"></span>`;
     const restoreFunc = isFolder ? `promptRestoreFolder(${item.id}, event)` : `promptRestoreDocument(${item.id}, event)`;
     const deleteBtn = window.currentUserRole === 'admin'
-        ? `<button onclick="permanentDeleteItem(${item.id}, '${item.type}', event)" class="px-3 py-1.5 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-md shadow-sm transition-colors">Delete</button>`
+        ? `<button onclick="permanentDeleteItem(${item.id}, '${item.type}', event)" class="px-3 py-1.5 text-xs font-bold text-white bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 rounded-md shadow-sm transition-colors">Delete</button>`
         : '';
     return `
-        <tr onclick="handleRowClick(event, this)" class="border-b border-slate-100 hover:bg-slate-50 transition-colors group" data-rb-id="${item.id}" data-rb-type="${item.type}">
-            <td class="py-3 pl-3" onclick="event.stopPropagation()"><input type="checkbox" value="${item.id}" onchange="toggleSelection(this, '${item.type}', ${item.id})" class="row-checkbox rounded border-slate-300 text-blue-600 focus:ring-blue-500"></td>
+        <tr onclick="handleRowClick(event, this)" class="border-b border-slate-100 hover:bg-slate-50 transition-colors group dark:border-slate-700 dark:hover:bg-[#1e293b]" data-rb-id="${item.id}" data-rb-type="${item.type}">
+            <td class="py-3 pl-3" onclick="event.stopPropagation()"><input type="checkbox" value="${item.id}" onchange="toggleSelection(this, '${item.type}', ${item.id})" class="row-checkbox rounded border-slate-300 text-blue-600 focus:ring-blue-500 dark:border-slate-600 dark:bg-slate-800"></td>
             <td class="py-3 pl-2">
                 <div class="flex items-center gap-1" style="padding-left:${indent}px">
                     ${chevron}
                     ${isFolder ? folderIcon : docIcon}
                 </div>
             </td>
-            <td class="py-3 font-medium text-slate-700">${item.name}</td>
-            <td class="py-3 text-right text-slate-500">${item.deleted_by_name || 'System'}</td>
-            <td class="py-3 text-right text-slate-400">${date}</td>
-            <td class="py-3 text-right pr-4 text-slate-500">${location || (depth > 0 ? '(inside deleted folder)' : 'Home')}</td>
+            <td class="py-3 font-medium text-slate-700 dark:text-slate-200">${item.name}</td>
+            <td class="py-3 text-right text-slate-500 dark:text-slate-400">${item.deleted_by_name || 'System'}</td>
+            <td class="py-3 text-right text-slate-400 dark:text-slate-500">${date}</td>
+            <td class="py-3 text-right pr-4 text-slate-500 dark:text-slate-400">${location || (depth > 0 ? '(inside deleted folder)' : 'Home')}</td>
             <td class="py-3 pr-2 text-center">
                 <div class="flex items-center justify-center gap-2">
-                    <button onclick="${restoreFunc}" class="px-3 py-1.5 text-xs font-bold text-white bg-green-600 hover:bg-green-700 rounded-md shadow-sm transition-colors">Restore</button>
+                    <button onclick="${restoreFunc}" class="px-3 py-1.5 text-xs font-bold text-white bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 rounded-md shadow-sm transition-colors">Restore</button>
                     ${deleteBtn}
                 </div>
             </td>
